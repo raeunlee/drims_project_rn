@@ -21,8 +21,8 @@ const styles = StyleSheet.create ({
     justifyContent: 'center'
 },
     Text1: {
-        fontSize: '30px',
-        marginBottom: '10px',
+        fontSize: 30,
+        marginBottom: 10,
     },
 
 });
