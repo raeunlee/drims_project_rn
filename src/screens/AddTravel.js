@@ -2,11 +2,13 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 
-const Add_travel = () => {
+const AddTravel = () => {
     return(
         <View style= {styles.Container}>
             <Text style = {styles.Text1}>
                 여행 추가하는 페이지임
+                
+
             </Text>
         </View>
     );
@@ -27,4 +29,4 @@ const styles = StyleSheet.create ({
 
 });
 
-export default Add_travel;
+export default AddTravel;
