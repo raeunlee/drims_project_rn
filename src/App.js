@@ -29,10 +29,10 @@ const App = () => {
                 name = "AddTravel"
                 component = {AddTravel}
                 />
-                <Stack.Screen 
+             <Stack.Screen 
                 name = "AddCountry"
                 component = {AddCountry}
-                />
+                />   
 
             </Stack.Navigator>
           

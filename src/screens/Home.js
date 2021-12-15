@@ -12,7 +12,7 @@ const Home = ({navigation}) => {
  
     const Callapi=()=>{
         axios
-        .get('http://localhost:10000/hi')
+        .get('http://localhost:3000/hi')
         .then(function(response){
             console.log(response.data);
           })
@@ -23,8 +23,7 @@ const Home = ({navigation}) => {
         return(
             <View>
                 <Text>
-
-                    connect
+                    로컬서버랑 현재 connect
                     </Text>
             </View>
         );
@@ -56,9 +55,9 @@ const styles = StyleSheet.create ({
     justifyContent: 'center'
 },
     Text1: {
-        fontSize: '30px',
-        marginBottom: '10px',
-    },
+        fontSize: 30,
+        marginBottom: 10,
+    }
 
 });
 
