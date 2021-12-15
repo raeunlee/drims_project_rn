@@ -4,6 +4,9 @@ import {Doughnut} from 'react-chartjs-2';
 import 'chart.js/auto'
 import Axios from "axios";
 
+const id = 'roybae'
+const date = '2021-11-14'
+
 const data = {
     labels: ['음식','교통','관광','쇼핑','숙박','etc'],
     datasets: [{
@@ -26,8 +29,8 @@ function Add(category, pay) {
 function App() {
     useEffect(()=>{
       Axios.post('http://localhost:3001/api/get',{    //여기서 body부분에 api에 넘길 id나 date 알맞은 자료를 가져오도록 하면 됨
-        id: 'roybae',
-        date: '2021-11-14'
+        id: id,
+        date: date
       }).then((response)=>{        
         for (let i = 0 ; i < response.data.length ; i++){
           Add(response.data[i].category, response.data[i].pay)  
@@ -40,7 +43,8 @@ const Money = () => {
     App()
     return(
         <View style= {styles.Container}>
-            <div className="App">
+            <div className="App">    
+                {id}님 {date}일
                 <Doughnut data={data} />
             </div>
         </View>
