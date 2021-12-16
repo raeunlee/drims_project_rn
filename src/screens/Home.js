@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const Home = ({navigation}) => {
 
- 
+ /*
     const Callapi=()=>{
         axios
         .get('http://localhost:3000/hi')
@@ -28,12 +28,12 @@ const Home = ({navigation}) => {
             </View>
         );
     };
-
+*/
     return(
         <View style= {styles.Container}>
             <Text style = {styles.Text1}>
                 여행 추가하는 홈 메인 화면 버튼 네비 아직 안만들었음 
-                <Callapi />
+                
             </Text>
            
             <Button title = "여행추가하는 페이지로 이동" 
