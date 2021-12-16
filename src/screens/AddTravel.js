@@ -11,7 +11,7 @@ const AddTravel = () => {
     const [travellist, setTravellist] = useState([]);
 
     const addTravel = () => {
-        axios.post("http://localhost:3000/travel", {
+        axios.post("http://localhost:3000/hi", {
             travel : travel,
             money: money,
         }).then (()=> {

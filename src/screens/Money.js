@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import {Doughnut} from 'react-chartjs-2';
-import 'chart.js/auto'
+//import {Doughnut} from 'react-chartjs-2';
+//import 'chart.js/auto'
 import Axios from "axios";
 
 const id = 'roybae'
@@ -60,8 +60,8 @@ const styles = StyleSheet.create ({
     justifyContent: 'center'
 },
     Text1: {
-        fontSize: '30px',
-        marginBottom: '10px',
+        fontSize: 30,
+        marginBottom: 10,
     },
 
 });
