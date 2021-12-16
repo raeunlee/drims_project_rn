@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+/*import React, { Component, useState, useEffect } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import {Doughnut} from 'react-chartjs-2';
 import 'chart.js/auto'
@@ -67,3 +67,34 @@ const styles = StyleSheet.create ({
 });
 
 export default Money;
+*/
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
+
+
+const Mypage = () => {
+    return(
+        <View style= {styles.Container}>
+            <Text style = {styles.Text1}>
+                마이페이지임
+            </Text>
+        </View>
+    );
+};
+
+const styles = StyleSheet.create ({
+    Container: {
+
+    flex:1,
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center'
+},
+    Text1: {
+        fontSize: 30,
+        marginBottom: 10,
+    },
+
+});
+
+export default Mypage;
