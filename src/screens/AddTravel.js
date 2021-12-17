@@ -2,28 +2,51 @@ import React from "react";
 import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, Alert} from "react-native";
 import { useState } from "react";
 import axios, * as others from 'axios';
-
+import { useNavigation } from "@react-navigation/native";
 
 
 const AddTravel = () => {
+    const navigation = useNavigation();
     const [travel, setTravel] = useState("");
     const [money, setMoney] = useState(0);
-    const [travellist, setTravellist] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
-    const addTravel = () => {
-        axios.post("http://localhost:3000/hi", {
-            travel : travel,
-            money: money,
-        }).then (()=> {
-            console.log("보냄");
-        }).catch((error)=> {
-
-        }).then(() => { })
+    const onChangeTravelHandler = (travel) => {
+        setTravel(travel);
     };
+    const onChangeMoneyHandler = (money) => {
+        setMoney(money);
+    };
+
+    const onSubmitButtonHandler = async() => {
+        setIsLoading(true);
+        try {
+            const response = await axios.post("http://localhost:3000/travel", {
+                travel,
+                money,
+            
+        });
+        if (response.status == 201) {
+            alert('success');
+            console.log('ddd!!');
+            setIsLoading(false);
+            setTravel('');
+            setMoney(0);
+        }   else {
+            throw new Error ("errr");
+        }
+
+    } catch (error) {
+        alert("errr");
+        setIsLoading(false);
+    }
+};
+
+
 
     const getTravel = () => {
         axios.get("http://localhost:3000/travel").then((response) => {
-            console.log(response);
+            console.log(response.data);
         });
     };
 
@@ -32,15 +55,22 @@ const AddTravel = () => {
             <Text style = {styles.Text1}>
                 당신의 여행을 추가하세요
             </Text>
-            <TextInput placeholder="여행이름을 걍 써라"
-            onChange={(event) => {setTravel(event.target.value)}}/>
+            <TextInput placeholder="여행의 이름을 지어주세요"
+             value={travel}
+             editable={!isLoading}
+             onChangeText={onChangeTravelHandler}/>
 
-            <TextInput placeholder="예산 써봐라"
-            onChange={(event) => {setMoney(event.target.value)}}/>
+            <TextInput placeholder="예산을 알려주세요"
+            value={String(money)}
+            editable={!isLoading}
+            onChangeText={onChangeMoneyHandler}/>
 
-            <Button title = "눌르면 서버로 전송한 담에 여행 생성된 페이지로 이동하도록" 
-            onPress={addTravel}/>
-
+            <Button title = "저장하기 (서버로 전송하기)" 
+            onPress={onSubmitButtonHandler}
+            />
+            <Button title="나의 여행으로 돌아가기" 
+            onPress={() => navigation.navigate('Home')}
+            />
             <Button title = "누르면 보여줘~" 
             onPress={getTravel}/> 
         </View>

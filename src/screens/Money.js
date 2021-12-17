@@ -1,24 +1,24 @@
-// import React, { Component, useState, useEffect } from "react";
-// import { StyleSheet, View, Text } from "react-native";
-// import {Doughnut} from 'react-chartjs-2';
-// import 'chart.js/auto'
-// import Axios from "axios";
+/*import React, { Component, useState, useEffect } from "react";
+import { StyleSheet, View, Text } from "react-native";
+import {Doughnut} from 'react-chartjs-2';
+import 'chart.js/auto'
+import Axios from "axios";
 
-// const id = 'roybae'
-// const date = '2021-11-14'
+const id = 'roybae'
+const date = '2021-11-14'
 
-// const data = {
-//     labels: ['음식','교통','관광','쇼핑','숙박','etc'],
-//     datasets: [{
-//       data: [0, 0, 0, 0, 0, 0],
-//       backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#07e02f', '#FF321F', '#00eFFe'],
-//       hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#07e02f', '#FF321F', '#00eFFe']
-//     }]
-//   };
+const data = {
+    labels: ['음식','교통','관광','쇼핑','숙박','etc'],
+    datasets: [{
+      data: [0, 0, 0, 0, 0, 0],
+      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#07e02f', '#FF321F', '#00eFFe'],
+      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#07e02f', '#FF321F', '#00eFFe']
+    }]
+  };
 
-// function Add(category, pay) {
-//     for (let j = 0 ; j < 6 ; j++){
-//         if(category == data.labels[j]){
+function Add(category, pay) {
+    for (let j = 0 ; j < 6 ; j++){
+        if(category == data.labels[j]){
 //      console.log(data.datasets[0].data[j])
 //         data.datasets[0].data[j] = data.datasets[0].data[j] + pay
 //      console.log(data.datasets[0].data[j])
@@ -68,6 +68,7 @@
 
 // export default Money;
 
+*/
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
@@ -98,4 +99,3 @@ const styles = StyleSheet.create ({
 });
 
 export default Mypage;
-
