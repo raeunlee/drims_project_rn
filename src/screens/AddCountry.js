@@ -22,7 +22,7 @@ const onChangeText = (value) => {
 const onSubmitButtonHandler = async() => {
     setIsLoading(true);
     try{
-        axios.post("http://localhost:3000/country",{
+        axios.post("http://192.168.219.101:3000/country",{
         text,
     });
     if (response.status == 201) {

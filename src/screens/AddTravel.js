@@ -7,7 +7,14 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 // https://github.com/mmazzarolo/react-native-modal-datetime-picker
 
-const Example = () => {
+
+
+
+const AddTravel = () => {
+    const navigation = useNavigation();
+    const [travel, setTravel] = useState("");
+    const [money, setMoney] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
     const [date, setDate] = useState(new Date(1598051730000));
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
@@ -16,75 +23,70 @@ const Example = () => {
     const [mode2, setMode2] = useState('date');
     const [show2, setShow2] = useState(false);
 
-    const onChange = (event, selectedDate) => {
-      const currentDate = selectedDate || date;
-      setShow(Platform.OS === 'ios');
-      setDate(currentDate);
-    };
-
-    const onChange2 = (event, selectedDate) => {
-        const currentDate = selectedDate || date;
-        setShow2(Platform.OS === 'ios');
-        setDate2(currentDate);
-      };
-
-    const showMode = (currentMode) => {
-      setShow(true);
-      setMode(currentMode);
-    };
-
-    const showMode2 = (currentMode) => {
-        setShow2(true);
-        setMode2(currentMode);
-      };
-
-    const showDatepicker = () => {
-      showMode('date');
-    };
+    const Example = () => {
+     
   
-    const showDatepicker2 = () => {
-    showMode2('date');
+      const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(Platform.OS === 'ios');
+        setDate(currentDate);
+      };
+  
+      const onChange2 = (event, selectedDate) => {
+          const currentDate = selectedDate || date;
+          setShow2(Platform.OS === 'ios');
+          setDate2(currentDate);
+        };
+  
+      const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+      };
+  
+      const showMode2 = (currentMode) => {
+          setShow2(true);
+          setMode2(currentMode);
+        };
+  
+      const showDatepicker = () => {
+        showMode('date');
+      };
+    
+      const showDatepicker2 = () => {
+      showMode2('date');
+      };
+  
+      return (
+        <View>
+          <View>
+            <Button onPress={showDatepicker} title="시작 날짜" />
+          </View> 
+          {show && (
+            <DateTimePicker
+              testID="dateTimePicker"
+              value={date}
+              mode={mode}
+             // is24Hour={true}
+              display="default"
+              onChange={onChange}
+            />
+          )}
+          <View>
+            <Button onPress={showDatepicker2} title="끝 날짜" />
+          </View> 
+          {show && (
+            <DateTimePicker
+              testID="dateTimePicker2"
+              value={date2}
+              mode={mode2}
+            //  is24Hour={true}
+              display="default"
+              onChange={onChange2}
+            />
+          )}
+        </View>
+      );
     };
-
-    return (
-      <View>
-        <View>
-          <Button onPress={showDatepicker} title="시작 날짜" />
-        </View> 
-        {show && (
-          <DateTimePicker
-            testID="dateTimePicker"
-            value={date}
-            mode={mode}
-           // is24Hour={true}
-            display="default"
-            onChange={onChange}
-          />
-        )}
-        <View>
-          <Button onPress={showDatepicker2} title="끝 날짜" />
-        </View> 
-        {show && (
-          <DateTimePicker
-            testID="dateTimePicker2"
-            value={date2}
-            mode={mode2}
-          //  is24Hour={true}
-            display="default"
-            onChange={onChange2}
-          />
-        )}
-      </View>
-    );
-  };
-
-
-const AddTravel = () => {
-    const navigation = useNavigation();
-    const [travel, setTravel] = useState("");
-    const [money, setMoney] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
-
     const onChangeTravelHandler = (travel) => {
         setTravel(travel);
     };
@@ -95,9 +97,11 @@ const AddTravel = () => {
     const onSubmitButtonHandler = async() => {
         setIsLoading(true);
         try {
-            const response = await axios.post("http://localhost:3000/travel", {
-                travel,
-                money,
+            const response = await axios.post("http://192.168.219.101:3000/travel", {
+                travel:travel,
+                date:date,
+                date2:date2,
+                money:money,
             
         });
         if (response.status == 201) {
@@ -119,7 +123,7 @@ const AddTravel = () => {
 
 
     const getTravel = () => {
-        axios.get("http://localhost:3000/travel").then((response) => {
+        axios.get("http://192.168.219.101:3000/travel").then((response) => {
             console.log(response.data);
         });
     };
