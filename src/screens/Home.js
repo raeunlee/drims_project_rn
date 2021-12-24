@@ -2,18 +2,19 @@
 import { NavigationContainer } from '@react-navigation/native';
 import axios, { Axios } from 'axios';
 import { setStatusBarHidden } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet , Button, View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { TouchableOpacity, StyleSheet , Button, View, Text} from 'react-native';
 import { useState } from 'react';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import TravelList from '../components/TravelList';
 
-const Home = ({navigation}) => {
 
+const MakeTravel = () => {
+    const navigation = useNavigation();
     return(
-        <View style= {styles.Container}>
-
+        <TouchableOpacity onPress={() => navigation.navigate("AddTravel")}>
         <View style = {styles.Box1}>
+        
         <View style = {styles.TextBox1}> 
             <Text style = {styles.Text1}>
              새로운 여행을 추가해주세요
@@ -25,31 +26,70 @@ const Home = ({navigation}) => {
             </Text>
         </View>   
         </View>
-
-            <Button title = "여행추가하는 페이지로 이동" 
-            onPress={()=> navigation.navigate('AddTravel')} />
-            <Button title = "국가추가하는 페이지로 이동" 
-            onPress={()=> navigation.navigate('AddCountry')} />
-             
-        </View>
+       </TouchableOpacity>
     );
 }
 
-const Box1= () => {
- return(
-     <View style = {styles.Box1}>
-           <View style = {styles.TextBox1}> 
-            <Text style = {styles.Text1}>
-             여행을 추가해주세요
-            </Text> 
+
+
+//추후 데이터 받아올 예정
+
+class Home extends Component { 
+
+    state = {
+            loading:false,
+            TravelList: [],
+        };
+    loadTravel(){
+        axios
+        .get("http://192.168.3.187:3000/travel/data",{})
+        .then((response) => {
+            const data = response.data
+            console.log(data);
+            this.setState({ 
+                loading:true,
+                TravelList:data
+            });
+            }) .catch(e => {
+                console.error(e);
+                this.setState({
+                    loading:false
+            });
+            });
+         };
+    componentDidMount(){
+        this.loadTravel();
+    }
+    render(){ 
+        console.log(this.state.TravelList);
+    return(
+        
+
+    <View>
+    <MakeTravel/>      
+        {
+            this.state.TravelList.map(c => {
+                return(
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("MyTravel")}>
+                    
+                    <TravelList
+                    key={c.key}
+                    travelName = {c.travelName}
+                    totalMoney = {c.totalMoney}
+                 />
+                    </TouchableOpacity>
+
+                );
+            })
+        }
+        <Button title = "국가추가하는 페이지로 이동" 
+        onPress={()=> navigation.navigate('AddCountry')} />
+        <Button title = "로그인하는 페이지로 이동" 
+        onPress={()=> navigation.navigate('Login')} />
         </View>
-        <View style = {styles.IconBox}>
-            <Text style = {styles.Icon}>
-             +
-            </Text>
-        </View>   
-    </View>
- )   
+        
+    );
+    }
 }
 
 const styles = StyleSheet.create ({

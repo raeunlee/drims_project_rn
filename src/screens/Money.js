@@ -77,7 +77,7 @@ const Mypage = () => {
     return(
         <View style= {styles.Container}>
             <Text style = {styles.Text1}>
-                마이페이지임
+                지출페이지
             </Text>
         </View>
     );
