@@ -67,11 +67,10 @@ const AddTravel = () => {
                 money,
                 date,
                 date2,
-            
         });
         if (response.status == 201) {
-            alert('success');
-            console.log('ddd!!');
+            alert('저장되었습니다!');
+            console.log('여행저장완료');
             setIsLoading(false);
             setTravel('');
             setMoney(0);
@@ -90,7 +89,7 @@ const AddTravel = () => {
 
 
     const getTravel = () => {
-        axios.get("http://localhost:3000/travel").then((response) => {
+        axios.get("http://localhost:3000/travel/data").then((response) => {
             console.log(response.data);
         });
     };
@@ -148,9 +147,11 @@ const AddTravel = () => {
             onChangeText={onChangeMoneyHandler}
             style = {styles.Text1}/>
 
+
             <Button title = "저장하기 (서버로 전송하기)" 
             onPress={onSubmitButtonHandler}
             />
+
             <Button title="나의 여행으로 돌아가기" 
             onPress={() => navigation.navigate('Home')}
             />
