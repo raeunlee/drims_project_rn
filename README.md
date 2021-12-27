@@ -37,16 +37,6 @@
 
 ![스크린샷 2021-12-28 오전 12 28 34](https://user-images.githubusercontent.com/49014085/147485720-e776d2cb-fc72-4a8c-8635-10d6fa7d1fe7.png)
 
-## 프로젝트 화면구성도 (구현예시, 추가 예정)
-
-![스크린샷 2021-12-24 오후 5.47.06.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/52a897ba-170a-4232-a65c-8ffb0e3208ef/스크린샷_2021-12-24_오후_5.47.06.png)
-
-![스크린샷 2021-12-24 오후 5.47.20.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3dd087c-3005-4e73-905c-b7c1330dc646/스크린샷_2021-12-24_오후_5.47.20.png)
-
-![스크린샷 2021-12-24 오후 5.47.31.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/508eef21-c0f5-423e-9a82-45705edf3a00/스크린샷_2021-12-24_오후_5.47.31.png)
-
-![스크린샷 2021-12-24 오후 5.47.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5eb2d03a-dec4-46ee-922f-897a4da651df/스크린샷_2021-12-24_오후_5.47.42.png)
-
 ## 디렉토리 구조 (추가 예정)
 
 mini_project
