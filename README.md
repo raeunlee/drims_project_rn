@@ -1,4 +1,4 @@
-# '여행가계부-유럽편' 프로젝트 (미완성)
+# '여행가계부-유럽편' 프로젝트
 
 ## 👩🏻‍💻개발동기
 
@@ -24,7 +24,7 @@
 
 ## 🛠️기술구현
 
-![스크린샷 2021-12-23 오후 5.32.11.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/add64417-3840-49c5-a084-c6bc655ed3eb/스크린샷_2021-12-23_오후_5.32.11.png)
+https://s3.us-west-2.amazonaws.com/secure.notion-static.com/add64417-3840-49c5-a084-c6bc655ed3eb/스크린샷_2021-12-23_오후_5.32.11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211227%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211227T041612Z&X-Amz-Expires=86400&X-Amz-Signature=2260da58b33f5fa503a2f0f7089e44b61b98898bc64dd6175705aa17d6321f5d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA%25202021-12-23%2520%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE%25205.32.11.png%22&x-id=GetObject
 
 ## Frontend
 
