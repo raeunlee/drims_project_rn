@@ -25,11 +25,11 @@
 ## 🛠️기술구현
 <img width="848" alt="스크린샷 2021-12-23 오후 5 31 49" src="https://user-images.githubusercontent.com/49014085/147485522-ede16c84-72c4-4413-8cbe-0a63f8d790f1.png">
 
-## Frontend
+## 💡Frontend
 
 [https://github.com/raeunlee/drims_project_rn](https://github.com/raeunlee/drims_project_rn)
 
-## Backend
+## 💡Backend
 
 [https://github.com/raeunlee/drims_project_server](https://github.com/raeunlee/drims_project_server)
 
