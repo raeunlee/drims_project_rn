@@ -35,9 +35,7 @@
 
 ## 로그인 및 서비스 프로세스
 
-![스크린샷 2021-12-24 오후 5.48.31.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d5bb0873-8a1c-4ff9-b2de-6426d336ea0c/스크린샷_2021-12-24_오후_5.48.31.png)
-
-![스크린샷 2021-12-24 오후 5.48.40.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/832d4981-2041-40d5-a9f9-a74072ed0c5b/스크린샷_2021-12-24_오후_5.48.40.png)
+![스크린샷 2021-12-28 오전 12 28 34](https://user-images.githubusercontent.com/49014085/147485720-e776d2cb-fc72-4a8c-8635-10d6fa7d1fe7.png)
 
 ## 프로젝트 화면구성도 (구현예시, 추가 예정)
 
